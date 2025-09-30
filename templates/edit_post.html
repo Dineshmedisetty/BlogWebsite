@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Post - BlogSphere{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    <i class="fas fa-edit"></i> Edit Post
+                </h4>
+            </div>
+            <div class="card-body">
+                <form method="POST" id="edit-post-form">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Post Title</label>
+                        <input type="text" class="form-control" id="title" name="title" required maxlength="200" value="{{ post.title }}">
+                        <div class="form-text">
+                            <span id="title-count">{{ post.title|length }}</span>/200 characters
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="content" class="form-label">Post Content</label>
+                        <textarea class="form-control" id="content" name="content" rows="12" required>{{ post.content }}</textarea>
+                        <div class="form-text">
+                            <span id="content-count">{{ post.content|length }}</span> characters
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <a href="{{ url_for('view_post', post_id=post.id) }}" class="btn btn-secondary">
+                                <i class="fas fa-eye"></i> Preview
+                            </a>
+                            <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">
+                                <i class="fas fa-arrow-left"></i> Cancel
+                            </a>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i> Update Post
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="card mt-3">
+            <div class="card-header">
+                <h6 class="mb-0">Post Information</h6>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <strong>Created:</strong> {{ post.created_at.strftime('%B %d, %Y') }}
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-4">
+                        <strong>Likes:</strong> {{ post.like_count }}
+                    </div>
+                    <div class="col-md-4">
+                        <strong>Comments:</strong> {{ post.comment_count }}
+                    </div>
+                    <div class="col-md-4">
+                        <strong>Views:</strong> <span class="text-muted">N/A</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<!-- Edit post form functionality is handled by forms.js -->
+{% endblock %}

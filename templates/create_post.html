@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Create Post - BlogSphere{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    <i class="fas fa-plus"></i> Create New Post
+                </h4>
+            </div>
+            <div class="card-body">
+                <form method="POST" id="create-post-form">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Post Title</label>
+                        <input type="text" class="form-control" id="title" name="title" required maxlength="200" placeholder="Enter an engaging title for your post...">
+                        <div class="form-text">
+                            <span id="title-count">0</span>/200 characters
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="content" class="form-label">Post Content</label>
+                        <textarea class="form-control" id="content" name="content" rows="12" required placeholder="Share your thoughts, ideas, or experiences..."></textarea>
+                        <div class="form-text">
+                            <span id="content-count">0</span> characters
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between">
+                        <a href="{{ url_for('index') }}" class="btn btn-secondary">
+                            <i class="fas fa-arrow-left"></i> Cancel
+                        </a>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Publish Post
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="card mt-3">
+            <div class="card-header">
+                <h6 class="mb-0">Writing Tips</h6>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled mb-0">
+                    <li><i class="fas fa-lightbulb text-warning"></i> Write a compelling title that captures attention</li>
+                    <li><i class="fas fa-lightbulb text-warning"></i> Use clear and engaging language</li>
+                    <li><i class="fas fa-lightbulb text-warning"></i> Break up long paragraphs for better readability</li>
+                    <li><i class="fas fa-lightbulb text-warning"></i> Share personal experiences and insights</li>
+                    <li><i class="fas fa-lightbulb text-warning"></i> Ask questions to encourage engagement</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<!-- Create post form functionality is handled by forms.js -->
+{% endblock %}
