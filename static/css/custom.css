@@ -1,0 +1,170 @@
+/* Custom CSS for BlogSphere */
+
+/* Simple color scheme */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --text-color: #212529;
+    --text-muted: #6c757d;
+    --border-color: #dee2e6;
+}
+
+/* Typography */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f8f9fa;
+}
+
+/* Navigation */
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #28a745;
+}
+
+.navbar-brand:hover {
+    color: #28a745;
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover {
+    color: white !important;
+}
+
+/* Cards */
+.post-card {
+    transition: transform 0.2s ease;
+    border: 1px solid var(--border-color);
+}
+
+.post-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: var(--light-color);
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* Buttons */
+.btn {
+    transition: none;
+}
+
+.btn:hover {
+    transform: none;
+}
+
+.like-btn:hover {
+    color: var(--danger-color) !important;
+}
+
+.like-btn.liked {
+    color: var(--danger-color);
+}
+
+/* Comments */
+.comment-section {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.comment-item {
+    border-left: 3px solid var(--primary-color);
+    padding-left: 15px;
+    margin-bottom: 15px;
+    transition: background-color 0.2s ease;
+}
+
+.comment-item:hover {
+    background-color: rgba(0, 123, 255, 0.05);
+}
+
+/* Flash messages */
+.flash-messages {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 1050;
+    max-width: 400px;
+}
+
+.flash-message {
+    margin-bottom: 10px;
+}
+
+/* Forms */
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Post content */
+.post-content {
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.post-meta {
+    border-top: 1px solid var(--border-color);
+    padding-top: 10px;
+    margin-top: 15px;
+}
+
+.author-info {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .flash-messages {
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+    
+    .post-card {
+        margin-bottom: 20px;
+    }
+    
+    .comment-item {
+        padding-left: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .card-body {
+        padding: 15px;
+    }
+}
