@@ -62,10 +62,3 @@ A modern blog web application where users can read, create, edit, and interact w
    - Open your web browser
    - Navigate to `http://localhost:5000`
 
-## License
-
-This project is open source and available under the MIT License.
-
-## Support
-
-For questions or issues, please create an issue in the project repository or contact the development team.
