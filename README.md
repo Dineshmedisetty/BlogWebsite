@@ -22,7 +22,6 @@ A modern blog web application where users can read, create, edit, and interact w
 - **Flash Messages**: User feedback for all actions
 - **Form Validation**: Client and server-side validation
 - **Character Counters**: Real-time feedback on input length
-- **Demo Account**: Pre-configured demo user for testing
 
 ## Technology Stack
 
