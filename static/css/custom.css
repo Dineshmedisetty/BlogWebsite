@@ -27,11 +27,11 @@ body {
 .navbar-brand {
     font-weight: 700;
     font-size: 1.5rem;
-    color: #28a745;
+    color: #ffffff;
 }
 
 .navbar-brand:hover {
-    color: #28a745;
+    color: #fffefe;
 }
 
 .navbar-nav .nav-link {
