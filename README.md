@@ -46,6 +46,10 @@ A modern blog web application where users can read, create, edit, and interact w
 ### Installation Steps
 
 1. **Clone or Download** the project files to your local machine
+   ```bash
+   git clone <your-github-repo-url>
+   cd BlogWebsite
+   ```
 
 2. **Install Dependencies**
    ```bash
