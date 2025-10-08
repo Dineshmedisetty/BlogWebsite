@@ -3,6 +3,28 @@
 {% block title %}Home - BlogSphere{% endblock %}
 
 {% block content %}
+<!-- Hero Banner -->
+<div class="hero-banner mb-5">
+    <div class="hero-content text-center text-white py-5">
+        <h1 class="display-3 fw-bold mb-3">Welcome to BlogSphere</h1>
+        <p class="lead mb-4">Discover stories, thinking, and expertise from writers on any topic.</p>
+        <div class="hero-buttons">
+            {% if current_user %}
+                <a href="{{ url_for('create_post') }}" class="btn btn-light btn-lg px-4 me-2">
+                    <i class="fas fa-pen"></i> Start Writing
+                </a>
+            {% else %}
+                <a href="{{ url_for('register') }}" class="btn btn-light btn-lg px-4 me-2">
+                    <i class="fas fa-pen"></i> Start Writing
+                </a>
+                <a href="{{ url_for('login') }}" class="btn btn-outline-light btn-lg px-4">
+                    <i class="fas fa-sign-in-alt"></i> Sign In
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
 <div class="row">
     <div class="col-lg-8">
         <h1 class="mb-4">Latest Blog Posts</h1>
